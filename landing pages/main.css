@@ -389,3 +389,72 @@ details > summary::-webkit-details-marker {
 #test-box > a > span:hover{
   transform: scale(2);
 }
+
+
+/* edit profile */
+/* .container{
+} */
+
+.container .user .formBx {
+  padding: 20px;
+}
+
+.container .user .formBx form input {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  color: #333;
+  border: none;
+  background: #EBECF0;
+  outline: none;
+  margin: 8px 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
+}
+
+
+button{
+  padding: 5px;
+  margin-bottom: 15px;
+  font-weight: 300;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 3px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #4591fa;
+}
+
+
+select:focus{
+    outline: none;
+}
+
+select{
+    width: 300px;
+    padding: 10px;
+    color: #333;
+    border: none;
+    background: #EBECF0;
+    outline: none;
+    margin: 8px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
+}
+
+
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 400px;
+  }
+
+  .container .user .formBx {
+    width: 100%;
+  }
+}
