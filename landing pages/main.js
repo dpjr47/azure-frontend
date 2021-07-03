@@ -55,3 +55,60 @@ fetch(req)
         }
 
       })
+
+// statistics
+
+fetch("https://covid-19-data.p.rapidapi.com/country/code?code=in", {
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-key": "202ec55053msh42d87d43690c628p129cdcjsn64494601e657",
+        "x-rapidapi-host": "covid-19-data.p.rapidapi.com"
+    }
+})
+.then(function(response) {
+       // console.log(response.json());
+      return response.json();
+      }).then(function(jsonResult){
+        console.log(jsonResult)
+        console.log(jsonResult[0])
+
+        var disp1 = document.getElementById('ubox');
+        var disp2 = document.getElementById('ubox2');
+
+
+        var code = jsonResult[0]['country'];
+        var conf = jsonResult[0]['confirmed'];
+        var cri =  jsonResult[0]['critical'];
+        var dea =  jsonResult[0]['deaths'];
+        var rec =  jsonResult[0]['recovered'];
+
+        var disp2 = document.getElementById('ubox2');
+
+        var divs = document.createElement('li');
+        var hr4 = document.createElement('hr')
+        divs.innerHTML = code;
+        disp2.appendChild(divs);
+        divs.innerHTML = "confirmed "+conf;
+        disp2.appendChild(hr4);
+
+        var divs = document.createElement('li');
+        var hr = document.createElement('hr')
+        divs.innerHTML = "Critical "+cri;
+        disp2.appendChild(divs);
+        disp2.appendChild(hr);
+
+        var divs = document.createElement('li');
+        var hr2 = document.createElement('hr')
+        divs.innerHTML = "Deaths "+dea;
+        disp2.appendChild(divs);
+        disp2.appendChild(hr2);
+
+        var divs = document.createElement('li');
+        var hr3 = document.createElement('hr')
+        divs.innerHTML = "Recovered "+rec;
+        disp2.appendChild(divs);
+        disp2.appendChild(hr3);
+
+
+
+      })
