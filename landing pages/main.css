@@ -336,27 +336,27 @@ details > summary::-webkit-details-marker {
 
 
 
-#logout > a {
+#log-a {
   display:flex;
   flex-direction: row;
   padding: 10px;
   margin-top: 15px;
+  color: rgb(167, 54, 54);
   background: #fff;
   border-radius: 10px ;
-  color: rgb(202, 0, 0);
   width: 120px;
   cursor: pointer;
 }
 
-#logout :hover{
-  color: rgb(253, 0, 0);
-}
 
-#logout> a >span{
-  padding-right: 15px;
+#logout > .log-inner > a >span{
+  padding-right: 5px;
   font-weight: 800;
 }
 
+#log-a:hover{
+  color: rgb(255, 0, 0);
+}
 
 #test{
   display:none;
@@ -392,15 +392,18 @@ details > summary::-webkit-details-marker {
 
 
 /* edit profile */
-/* .container{
-} */
+.container{
+  display: none;
+  height: auto;
+  margin-bottom: 15px;
+}
 
 .container .user .formBx {
   padding: 20px;
 }
 
 .container .user .formBx form input {
-  width: 300px;
+  width: 320px;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -418,7 +421,6 @@ details > summary::-webkit-details-marker {
 
 button{
   padding: 5px;
-  margin-bottom: 15px;
   font-weight: 300;
   text-transform: uppercase;
   border: none;
@@ -434,7 +436,7 @@ select:focus{
 }
 
 select{
-    width: 300px;
+    width: 320px;
     padding: 10px;
     color: #333;
     border: none;
@@ -458,3 +460,4 @@ select{
     width: 100%;
   }
 }
+

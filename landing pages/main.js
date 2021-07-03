@@ -25,3 +25,7 @@ function mainshow4(){
     document.getElementById("test").style.display="none";
     document.getElementById("faq").style.display="none";
 }
+
+function profile(){
+    document.getElementById("edit_profile").style.display.display="inline";
+}

@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -114,23 +115,30 @@
         <div class="greet-faq">
 
           <div class="greet-texts">
-            <h1><</h1>
-            
+            <h1><</h1>            
+          </div>
+          <div id="logout" style="display: inline-block; ">
+            <div style="float:right" class="log-inner">
+              <a id="log-a" >
+                <span class="material-icons">logout</span><h3>Logout</h3>
+              </a>
+            </div>
+           
           </div>
          
         </div> 
-        <section >
+        <section style="height:100%; overflow:scroll;" >
           <div class="box">
             <h2><span class="material-icons">settings</span>Settings</h2>
           </div>
           <div class="box-settings">
             <div class="box-settings-inner">
-              <a>
+              <a id="toggle">
                 <span class="material-icons">
                   person
                   </span>
                 <h4>Edit profile</h4></a> 
-                <div class="container">
+                <div class="container" id="edit_profile">
                   <div class="user signinBx">
                     <div class="formBx">
                       <form action="">
@@ -171,22 +179,37 @@
                             
               
             <div class="box-settings-inner">
-              <a>
+              <a id="toggle2">
                 <span class="material-icons">
                   vpn_key
                   </span>
-                  <h4>Change password</h4>
-              </a>
+                  <h4>Change password</h4>     
+                </a>
+                  <div class="container" id="password">
+                    <div class="user signinBx">
+                      <div class="formBx" style="float: left;">
+                        <form action="">
+                          <!-- fetch from backend -->
+                          <input type="text" name="" placeholder="Old password" >
+                          <input type="password" name="" placeholder="New password" /> 
+                          <input type="text" name="" placeholder="Confirm password">             
+                          <button type="submit">Update</button>             
+                        </form>
+                      </div>
+                    </div>        
+                  </div> 
             </div>
           </div>
-          
-          <div id="logout">
-            <a>
-              <span class="material-icons">logout</span><h3>Logout</h3>
-            </a>
+          <div class="bottom-child">
+            <center>random text-dnt delte</center> 
+            <br>         
           </div>
-          
+            
         </section>
+
+           
+          
+        
         
         
        
@@ -334,7 +357,19 @@
 
 
     </div> <!--main wrapper div-->
+    <script>
+      $(document).ready(function() {
+        $("#toggle").click(function() {
+           $("#edit_profile").toggle(1000);
+        });
+   });
 
+   $(document).ready(function() {
+    $("#toggle2").click(function() {
+       $("#password").toggle(1000);
+        });
+    });
+    </script>
     <script src="main.js"></script>
   </body>
 </html>
