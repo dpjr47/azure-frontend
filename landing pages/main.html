@@ -131,6 +131,28 @@
           <div class="box">
             <h2><span class="material-icons">settings</span>Settings</h2>
           </div>
+
+          <div class="box-settings" style="margin-bottom: 10px;">
+            <div class="box-settings-inner">
+              <a id="toggle3" >
+                <span class="material-icons">
+                  photo
+                  </span>
+                <h4>Change Profile picture</h4></a> 
+                <div class="container" id="photo">
+                  <div class="user signinBx">
+                    <div class="formBx">
+                      <form action="">
+                        <!-- fetch from backend -->
+                        <input type="file" name="">                                  
+                        <button type="submit">Update</button>             
+                      </form>
+                    </div>
+                  </div>        
+                </div>      
+              </div>
+            </div>
+
           <div class="box-settings">
             <div class="box-settings-inner">
               <a id="toggle">
@@ -369,7 +391,14 @@
        $("#password").toggle(1000);
         });
     });
+    $(document).ready(function() {
+      $("#toggle3").click(function() {
+         $("#photo").toggle(1000);
+          });
+      });
+      
     </script>
+
     <script src="main.js"></script>
   </body>
 </html>
