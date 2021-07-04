@@ -268,3 +268,21 @@ input[type="submit"]:hover {
   background-color: #329dd5;
   transition: all 0.2s ease;
 }
+
+#logout{
+  padding:3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #0066eb;
+  font-weight: 800;
+  text-decoration: none;
+  margin-left: 40px;
+  display: inline-block;
+  position: relative;
+}
+
+#logout:hover{
+  color: #ff0011;
+}
