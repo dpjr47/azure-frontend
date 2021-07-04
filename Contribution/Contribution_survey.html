@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contribution | Test Page</title>
-    <link rel="stylesheet" href="Contribution_index_survey.css" />
-    <script src="Contribution_survey.js"></script>
+    <link rel="stylesheet" href="css/Contribution_index_survey.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
@@ -15,7 +15,7 @@
       <div class="survey">
         <h1 >Survey</h1>
       </div>      
-      <form action="">
+      <form action="record" method="post">
         <section class="basic">
           <div class="form_inner_headings">
             <h3>Metadata</h3>
@@ -61,7 +61,7 @@
             </div>
 
             <div class="input-box"> 
-              <input type="text" placeholder="Enter your district*" required />
+              <input type="text" placeholder="Enter your district*"/>
             </div>
 
 
@@ -175,224 +175,18 @@
           </div>
         </section>
 
-        <section class="record">
-          <div class="form_inner_headings">
-            <h3>Data Recording</h3>
-            <table>
-              <tr>
-              <td style="color: crimson; text-align: right;">*</td>
-              <td>Ensure that you are in a quiet room for better quality of sound.</td>
-              </tr>
-              <tr>
-                <td style="color: crimson; text-align: right;">**</td>
-                <td>Sanitise the device before further use.</td>
-              </tr>
-              <tr>
-                <td style="color: crimson; text-align: right;">***</td>
-                <td>Press the <span style="border: 1px solid black; padding: 2px; font-size: 8px;"><i class="fas fa-microphone-alt"></i> RECORD</span> button to record the audio.</td>
-              </tr>
-              <tr>
-                <td style="color: crimson; text-align: right;">***</td>
-                <td>Press the <span style="border: 1px solid black; padding: 2px; font-size: 8px;"><i class="far fa-stop-circle"></i> Stop</span> button to stop the recording</td>
-              </tr>
-              <tr>
-                <td style="color: crimson; text-align: right;">***</td>
-                <td>To re-record an audio press the <span style="border: 1px solid black; padding: 2px; font-size: 8px;"><i class="fas fa-microphone-alt"></i> RECORD</span> again</td>
-              </tr>              
-            </table>
-          </div>
-          <div class="user_record">
-            <div class="input-box">
-              <span class="label">1.Breathe(shallow)</span>
-              <div id="breathshallowContainer">
-                <div class="button_container">
-                  <div id="audioSupport"></div>
-                  <button
-                    type="button"
-                    id="recordbreathshallow"
-                    onclick="record(this, 'breathshallowContainer', 'id_audio_file_breathe_shallow')"
-                  ><i class="fas fa-microphone-alt"></i>record</button>
-                  <button
-                    type="button"
-                    name="stopbreathshallow"
-                    id="breathshallowStop"
-                    onclick="stopRecord('recordbreathshallow')"
-                  ><i class="far fa-stop-circle"></i>Stop</button>
-                </div>
-              </div>
-              <input type="hidden" name="audio_file_breathe_shallow" id="id_audio_file_breathe_shallow">
-            </div>
-            <div class="input-box">
-              <span class="label">2.Breathe(deep)</span> 
-              <div id="breathdeepContainer">
-                <div class="">
-                  <div id="audioSupport"></div>
-                  <button
-                    type="button"
-                    id="recordbreathdeep"
-                    onclick="record(this, 'breathdeepContainer', 'id_audio_file_breathe_deep')"
-                  ><i class="fas fa-microphone-alt"></i>record</button>
-                  <button
-                    type="button"
-                    name="stopbreathdeep"
-                    id="breathdeepStop"
-                    onclick="stopRecord('recordbreathdeep')"
-                  ><i class="far fa-stop-circle"></i>Stop</button>
-                </div>
-              </div>
-              <input type="hidden" name="audio_file_breathe_deep" id="id_audio_file_breathe_deep">
-            </div>
-            <div class="input-box">
-              <span class="label">3.Cough(shallow)</span>
-              <div id="coughshallowContainer">
-                <div class="">
-                  <div id="audioSupport"></div>
-                  <button
-                    type="button"
-                    id="recordcoughshallow"
-                    onclick="record(this, 'coughshallowContainer', 'id_audio_file_cough_shallow')"
-                  ><i class="fas fa-microphone-alt"></i>record</button>
-                  <button
-                    type="button"
-                    name="stopcoughshallow"
-                    id="coughshallowStop"
-                    onclick="stopRecord('recordcoughshallow')"
-                  ><i class="far fa-stop-circle"></i>Stop</button>
-                </div>
-              </div>
-              <input type="hidden" name="audio_file_cough_shallow" id="id_audio_file_cough_shallow">
-            </div>
-            <div class="input-box">
-              <span class="label">4.Cough(heavy)</span>
-              <div id="coughheavyContainer">
-                <div class="">
-                  <div id="audioSupport"></div>
-                  <button
-                    type="button"
-                    id="recordcoughheavy"
-                    onclick="record(this, 'coughheavyContainer', 'id_audio_file_cough_deep')"
-                  ><i class="fas fa-microphone-alt"></i>record</button>
-                  <button
-                    type="button"
-                    name="stopcoughheavy"
-                    id="coughheavyStop"
-                    onclick="stopRecord('recordcoughheavy')"
-                  ><i class="far fa-stop-circle"></i>Stop</button>
-                </div>
-              </div>
-              <input type="hidden" name="audio_file_cough_deep" id="id_audio_file_cough_deep">
-            </div>
-            <div class="input-box">
-              <span class="label">5.Vowel 'a' </span>
-              <div id="aContainer">
-                <div class="">
-                  <div id="audioSupport"></div>
-                  <button
-                    type="button"
-                    id="recorda"
-                    onclick="record(this, 'aContainer', 'id_audio_file_a')"
-                  ><i class="fas fa-microphone-alt"></i>record</button>
-                  <button
-                    type="button"
-                    name="stopa"
-                    id="aStop"
-                    onclick="stopRecord('recorda')"
-                  ><i class="far fa-stop-circle"></i>Stop</button>
-                </div>
-              </div>
-              <input type="hidden" name="audio_file_a" id="id_audio_file_a">
-            </div>
-            <div class="input-box">
-              <span class="label">6.Vowel 'e'</span>
-              <div id="eContainer">
-                <div class="">
-                  <div id="audioSupport"></div>
-                  <button
-                    type="button"
-                    id="recorde"
-                    onclick="record(this, 'eContainer', 'id_audio_file_e')"
-                  ><i class="fas fa-microphone-alt"></i>record</button>
-                  <button
-                    type="button"
-                    name="stope"
-                    id="eStop"
-                    onclick="stopRecord('recorde')"
-                  ><i class="far fa-stop-circle"></i>Stop</button>
-                </div>
-              </div>
-              <input type="hidden" name="audio_file_e" id="id_audio_file_e">
-            </div>
-            <div class="input-box">
-              <span class="label">7.Vowel 'o'</span>
-              <div id="oContainer">
-                <div class="">
-                  <div id="audioSupport"></div>
-                  <button
-                    type="button"
-                    id="recordo"
-                    onclick="record(this, 'oContainer', 'id_audio_file_o')"
-                  ><i class="fas fa-microphone-alt"></i>record</button>
-                  <button
-                    type="button"
-                    name="stopo"
-                    id="oStop"
-                    onclick="stopRecord('recordo')"
-                  ><i class="far fa-stop-circle"></i>Stop</button>
-                </div>
-              </div>
-              <input type="hidden" name="audio_file_o" id="id_audio_file_o">
-            </div>
-            <div class="input-box">
-              <span class="label">8.Counting(Normal)</span>
-              <div id="countnormalContainer">
-                <div class="">
-                  <div id="audioSupport"></div>
-                  <button
-                    type="button"
-                    id="recordcountnormal"
-                    onclick="record(this, 'countnormalContainer', 'id_audio_file_countnormal')"
-                  ><i class="fas fa-microphone-alt"></i>record</button>
-                  <button
-                    type="button"
-                    name="stopcountnormal"
-                    id="countnormalStop"
-                    onclick="stopRecord('recordcountnormal')"
-                  ><i class="far fa-stop-circle"></i>Stop</button>
-                </div>
-              </div>
-              <input type="hidden" name="audio_file_countnormal" id="id_audio_file_countnormal">
-            </div>
-            <div class="input-box">
-              <span class="label">9.Counting(Fast)</span>
-              <div id="countfastContainer">
-                <div class="">
-                  <div id="audioSupport"></div>
-                  <button
-                    type="button"
-                    id="recordcountfast"
-                    onclick="record(this, 'countfastContainer', 'id_audio_file_countfast')"
-                  ><i class="fas fa-microphone-alt"></i>record</button>
-                  <button
-                    type="button"
-                    name="stopcountfast"
-                    id="countfastStop"
-                    onclick="stopRecord('recordcountfast')"
-                  ><i class="far fa-stop-circle"></i>Stop</button>
-                </div>
-              </div>
-              <input type="hidden" name="audio_file_countfast" id="id_audio_file_countfast">
-            </div>
-          </div>
-        </section>
-
+        
         <div class="submit">
-          <input type="button" value="Submit"/>         
+          <button type="submit" ><i class="fas fa-arrow-circle-right"></i>Procced to recording</button>  
         </div>
       </form>
-    </main>
 
+    
+    </main>
+    <script src="js/countries.js"></script>
     <script language="javascript">
       populateCountries("country", "state");
     </script>
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>  
   </body>
 </html>

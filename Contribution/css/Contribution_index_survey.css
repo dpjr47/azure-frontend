@@ -10,10 +10,12 @@
 }
 
 body {
-  background: #EBECF0;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
+  background: #EBECF0;
+  background-size: 40px 40px;
+  background-image: url('https://simg.nicepng.com/png/small/92-920628_pattern-square-special-game-patterns-squares-grid-dots.png');
 }
 
 .header {
@@ -249,15 +251,11 @@ button > i {
   text-align: center;
 }
 
-.submit > input {
-  padding: 5px;
-  padding-left: 25px;
-  padding-right: 25px;
-  letter-spacing: 5px;
-  margin-top: 15px;
-  font-size: 1.3em;
+.submit > button {
+  padding: 15px;
+  margin: 15px;
+  font-size: 1em;
   font-weight: 300;
-  text-transform: uppercase;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -265,11 +263,11 @@ button > i {
   transition: all 0.2s ease-in-out;
 }
 
-.submit > input:hover {
+.submit > button:hover {
   box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
 }
 
-.submit > input:active {
+.submit > button:active {
   box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
 }
 

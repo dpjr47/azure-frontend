@@ -299,58 +299,58 @@ function populateCountries(countryElementId, stateElementId){
 
 //audio recorder
 
-function getAudio(container, save_to_id) {
-	if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-		navigator.mediaDevices.getUserMedia(
-			{audio: true}
-		).then(function (stream) {
-			mediaRecorder = new MediaRecorder(stream);
-			let fileReader = new FileReader();
-			mediaRecorder.start();
-			timeout = setTimeout(() => mediaRecorder.stop(), 25000); // we'll have a 25s media file (maximum size, the user can stop it earlier)
-			let chunks = [];
-			mediaRecorder.ondataavailable = function (e) {
-				chunks.push(e.data);
-			};
-			mediaRecorder.onstop = function () {
-				const audio = document.createElement('audio');
-				audio.setAttribute('controls', '');
-				const blob = new Blob(chunks, {'type': 'audio/ogg; codecs=opus'});
-				chunks = [];
-				audio.src = window.URL.createObjectURL(blob);
-				document.getElementById(container).prepend(audio);
+// function getAudio(container, save_to_id) {
+// 	if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+// 		navigator.mediaDevices.getUserMedia(
+// 			{audio: true}
+// 		).then(function (stream) {
+// 			mediaRecorder = new MediaRecorder(stream);
+// 			let fileReader = new FileReader();
+// 			mediaRecorder.start();
+// 			timeout = setTimeout(() => mediaRecorder.stop(), 25000); // we'll have a 25s media file (maximum size, the user can stop it earlier)
+// 			let chunks = [];
+// 			mediaRecorder.ondataavailable = function (e) {
+// 				chunks.push(e.data);
+// 			};
+// 			mediaRecorder.onstop = function () {
+// 				const audio = document.createElement('audio');
+// 				audio.setAttribute('controls', '');
+// 				const blob = new Blob(chunks, {'type': 'audio/ogg; codecs=opus'});
+// 				chunks = [];
+// 				audio.src = window.URL.createObjectURL(blob);
+// 				document.getElementById(container).prepend(audio);
 				
-				// define the function we have to use in order to correctly assign the string value.
-				fileReader.onload = function () {
+// 				// define the function we have to use in order to correctly assign the string value.
+// 				fileReader.onload = function () {
 					
-					let res = fileReader.result.replace('data:audio/ogg; codecs=opus;base64,', '');
+// 					let res = fileReader.result.replace('data:audio/ogg; codecs=opus;base64,', '');
 					
-					document.getElementById(save_to_id).value = res;
+// 					document.getElementById(save_to_id).value = res;
 					
-				};
-				fileReader.readAsDataURL(blob)
-				console.log(blob)
+// 				};
+// 				fileReader.readAsDataURL(blob)
+// 				console.log(blob)
 
-			}
-		}).catch(function (error) {
-			document.getElementById("audioSupport").innerHTML = error
-		})
-	} else {
-		document.getElementById("audioSupport").innerHTML = "Audio recording not supported";
-	}
-}
+// 			}
+// 		}).catch(function (error) {
+// 			document.getElementById("audioSupport").innerHTML = error
+// 		})
+// 	} else {
+// 		document.getElementById("audioSupport").innerHTML = "Audio recording not supported";
+// 	}
+// }
 
-function record(button, container, save_to_id) {
-	let oldAudio = document.getElementById(container).querySelector("audio");
-	if (oldAudio) {
-		oldAudio.remove();
-	}
-	getAudio(container, save_to_id);
-	button.style.background = "red";
-}
+// function record(button, container, save_to_id) {
+// 	let oldAudio = document.getElementById(container).querySelector("audio");
+// 	if (oldAudio) {
+// 		oldAudio.remove();
+// 	}
+// 	getAudio(container, save_to_id);
+// 	button.style.background = "red";
+// }
 
-function stopRecord(buttonId) {
-	mediaRecorder.stop();
-	clearTimeout(timeout);
-	document.getElementById(buttonId).style.background = "";
-}
+// function stopRecord(buttonId) {
+// 	mediaRecorder.stop();
+// 	clearTimeout(timeout);
+// 	document.getElementById(buttonId).style.background = "";
+// }
